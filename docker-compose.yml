@@ -1,0 +1,11 @@
+version: '3'
+services:
+  app:
+    image: python:latest
+    volumes:
+      - .:/app
+    environment:
+      - num=${NUM}
+    working_dir: /app
+    command: python -c "import server; server.game(${NUM})"
+    
